@@ -1,0 +1,110 @@
+/* Estilos generales */
+.home-container {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #333;
+}
+
+/* Estilo de la sección principal */
+.hero-section {
+  background: url('/images/hero-banner.jpg') no-repeat center center/cover;
+  color: rgb(0, 0, 0);
+  padding: 80px 20px;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+}
+
+.explore-button {
+  margin-top: 15px;
+  background: #720a0a;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.explore-button:hover {
+  background: #ad1313;
+}
+
+/* Sección de Promociones */
+.promo-section {
+  padding: 40px 20px;
+}
+
+.promo-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.promo-products {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.promo-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 250px;
+}
+
+.promo-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.promo-card h3 {
+  margin: 10px 0;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: red;
+}
+
+.new-price {
+  font-weight: bold;
+  color: green;
+}
+
+/* Sección de Categorías */
+.categories-section {
+  padding: 40px 20px;
+  background: #f4f4f4;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.category-card {
+  background: #001a35;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.category-card:hover {
+  background: #0056b3;
+}
