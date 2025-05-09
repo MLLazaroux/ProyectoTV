@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje Especial</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <!-- Fuentes elegantes de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #3b2f3f; /* Fondo oscuro con tonos cálidos */
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Animaciones y efectos del mensaje */
+        .message {
+            font-size: 4rem;
+            color: #e8c1d1;
+            background: -webkit-linear-gradient(45deg, #dcb5e8, #9c7dbf, #b58cd1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: textGlow 6s infinite alternate, moveText 4s ease-in-out infinite;
+            letter-spacing: 2px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
+            transform-origin: center center;
+        }
+
+        /* Animación del brillo y el movimiento del texto */
+        @keyframes textGlow {
+            0% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+                color: #dcb5e8;
+            }
+            50% {
+                text-shadow: 0 0 40px rgba(255, 255, 255, 0.6), 0 0 80px rgba(255, 255, 255, 0.3);
+                color: #9c7dbf;
+            }
+            100% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.5);
+                color: #b58cd1;
+            }
+        }
+
+        /* Movimiento suave del texto hacia arriba y abajo */
+        @keyframes moveText {
+            0% {
+                transform: translateY(-10px);
+            }
+            50% {
+                transform: translateY(8px);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Animación de parpadeo en las partículas */
+        .animated-text {
+            animation: fadeInOut 5s infinite;
+            font-size: 3.5rem;
+        }
+
+        /* Efecto de desvanecimiento y movimiento del texto */
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            25% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            50% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            75% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Particles Background -->
+<div id="particles-js"></div>
+
+<!-- Message Container -->
+<div class="container">
+    <div class="message animated-text" id="message">¿Quieres jugar bingo?</div>
+</div>
+
+<!-- Script to change message after 5 seconds -->
+<script>
+    setTimeout(() => {
+        let messageElement = document.getElementById('message');
+        messageElement.style.transition = 'opacity 1s ease-in-out';
+        messageElement.style.opacity = 0;
+        setTimeout(() => {
+            messageElement.innerHTML = 'Recuerda que te quiero mucho';
+            messageElement.style.opacity = 1;
+        }, 1000);
+    }, 5000);
+</script>
+
+<!-- Particles.js Configuration -->
+<script>
+    particlesJS("particles-js", {
+        particles: {
+            number: {
+                value: 180, /* Más partículas */
+                density: {
+                    enable: true,
+                    value_area: 900
+                }
+            },
+            color: {
+                value: "#9c7dbf"
+            },
+            shape: {
+                type: "circle",
+                stroke: {
+                    width: 0,
+                    color: "#ffffff"
+                }
+            },
+            opacity: {
+                value: 0.6,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 1,
+                    opacity_min: 0.1
+                }
+            },
+            size: {
+                value: 5,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 4,
+                    size_min: 1
+                }
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: "#ffffff",
+                opacity: 0.3,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: "none",
+                random: true,
+                straight: false,
+                out_mode: "out"
+            }
+        },
+        interactivity: {
+            detect_on: "canvas",
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: "repulse"
+                },
+                onclick: {
+                    enable: true,
+                    mode: "push"
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
